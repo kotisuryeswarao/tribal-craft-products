@@ -4,40 +4,125 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#ffb703" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="A creative React app with multiple dashboards: Home, Register, Login, Artisan, Consultant, and Admin."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <title>TribalCraft Dashboard</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Reset and font */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #fefae0, #faedcd, #fef9ef);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: linear-gradient(90deg, #fb8500, #ffb703);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: skewX(-25deg);
+        animation: shimmer 3s infinite linear;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .tagline {
+        font-size: 1rem;
+        color: #fffaf0;
+        opacity: 0.9;
+      }
+
+      #root {
+        padding: 30px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 0;
+        background-color: #ffb703;
+        color: white;
+        font-size: 0.9rem;
+        margin-top: 30px;
+        letter-spacing: 0.5px;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    </style>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <header>
+      <h1>🪶 TribalCraft Dashboard</h1>
+      <p class="tagline">
+        Explore | Connect | Create — A platform for artisans, consultants, and admins
+      </p>
+    </header>
+
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <footer>
+      © 2025 TribalCraft <a href="https://react.dev/"></a>
+    </footer>
   </body>
 </html>
