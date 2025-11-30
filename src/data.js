@@ -8,7 +8,9 @@ export const initialProducts = [
     image: "box.jpg",
     artisan: "Koti",
     approved: true,
+    paymentMethod: "UPI / Card / NetBanking / COD",
   },
+
   {
     id: "p2",
     name: "Teak Wood Wall Hanging",
@@ -18,7 +20,9 @@ export const initialProducts = [
     image: "Wall.jpg",
     artisan: "Nikhil",
     approved: true,
+    paymentMethod: "UPI / Card / NetBanking / COD",
   },
+
   {
     id: "p3",
     name: "Handwoven Bamboo Basket",
@@ -28,5 +32,6 @@ export const initialProducts = [
     image: "basket.jpg",
     artisan: "Tulasi",
     approved: true,
+    paymentMethod: "UPI / Card / NetBanking / COD",
   },
 ];

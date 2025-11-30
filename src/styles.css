@@ -1,36 +1,36 @@
-/* 🌿 Tribal Craft Marketplace – Professional Styling */
+/* 🌊 Tribal Craft Marketplace – Blue Theme */
 
 body {
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #fffaf3, #fff7ed);
-  color: #2f2f2f;
+  background: linear-gradient(to bottom right, #eef6ff, #e3f0ff);
+  color: #1e3a5f;
   min-height: 100vh;
 }
 
-/* 🌸 Headings */
+/* 🌊 Headings */
 h1, h2, h3 {
   font-weight: 700;
   text-align: center;
-  color: #8b4513;
+  color: #0b3c78;
   letter-spacing: 0.5px;
   margin-top: 25px;
   margin-bottom: 15px;
 }
 
-/* 🪶 Main Section Container */
+/* 🧊 Main Section Container */
 section {
   max-width: 1100px;
   margin: 40px auto;
   padding: 40px 30px;
   background-color: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 68, 158, 0.15);
   animation: fadeInUp 0.7s ease-out;
 }
 
-/* 💎 Product Cards */
+/* 🛍️ Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -38,10 +38,11 @@ section {
   margin-top: 30px;
 }
 
+/* 💠 Product Cards */
 .product-card {
-  background-color: #fffdf8;
+  background-color: #f8fbff;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -49,7 +50,7 @@ section {
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 63, 144, 0.25);
 }
 
 /* 🖼️ Product Images */
@@ -64,7 +65,7 @@ section {
   transform: scale(1.07);
 }
 
-/* 📜 Product Info */
+/* 🔵 Product Info */
 .product-info {
   padding: 18px;
   text-align: center;
@@ -72,27 +73,27 @@ section {
 
 .product-info h4 {
   font-size: 1.1rem;
-  color: #5b3a29;
+  color: #0b4376;
   margin-bottom: 8px;
 }
 
 .product-info p {
   font-size: 0.95rem;
-  color: #666;
+  color: #4a6075;
   margin-bottom: 12px;
 }
 
-/* 💰 Price */
+/* 💙 Price */
 .price {
   font-weight: 700;
-  color: #b45309;
+  color: #0b6fc2;
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-/* 🎨 Professional Buttons */
+/* 🔷 Professional Blue Buttons */
 button {
-  background: linear-gradient(90deg, #d97706, #b45309);
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
   color: #fff;
   font-weight: 600;
   border: none;
@@ -100,48 +101,49 @@ button {
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 button:hover {
-  background: linear-gradient(90deg, #92400e, #b45309);
+  background: linear-gradient(90deg, #1d4ed8, #1e40af);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.35);
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.35);
 }
 
 button:active {
   transform: scale(0.98);
 }
 
-/* 🌾 Button Variants */
+/* 🔵 Secondary Button */
 button.secondary {
   background: transparent;
-  color: #b45309;
-  border: 2px solid #b45309;
+  color: #1e40af;
+  border: 2px solid #1d4ed8;
   box-shadow: none;
 }
 
 button.secondary:hover {
-  background: #fff5e1;
-  color: #92400e;
+  background: #e0ecff;
+  color: #1e3a8a;
 }
 
+/* 🔷 Outline Button */
 button.outline {
   background: none;
-  color: #5b3a29;
-  border: 2px dashed #d97706;
+  color: #1e3a8a;
+  border: 2px dashed #2563eb;
   padding: 10px 24px;
 }
 
 button.outline:hover {
-  background: rgba(255, 215, 145, 0.2);
+  background: rgba(173, 202, 255, 0.25);
 }
 
-/* 🔘 Inputs and Forms */
+/* 🔘 Inputs */
 input, textarea, select {
   width: 100%;
   padding: 12px;
-  border: 2px solid #fcd34d;
+  border: 2px solid #93c5fd;
   border-radius: 10px;
   margin: 10px 0 18px;
   font-size: 1rem;
@@ -150,11 +152,11 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: #b45309;
-  box-shadow: 0 0 12px rgba(180, 83, 9, 0.25);
+  border-color: #2563eb;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
 }
 
-/* 🌾 Animations */
+/* 🔵 Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;

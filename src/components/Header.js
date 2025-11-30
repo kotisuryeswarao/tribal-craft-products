@@ -1,6 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ShoppingBag, LogOut, LogIn, UserPlus, Home } from "lucide-react";
+import {
+  ShoppingBag,
+  LogOut,
+  LogIn,
+  UserPlus,
+  Home,
+  FileText
+} from "lucide-react";
 
 export default function Header({ currentUser, onNavigate, onLogout }) {
   return (
@@ -24,6 +31,7 @@ export default function Header({ currentUser, onNavigate, onLogout }) {
 
         {/* Navigation */}
         <nav className="flex items-center gap-4 md:gap-6">
+          {/* Home */}
           <button
             onClick={() => onNavigate("home")}
             className="flex items-center gap-1 hover:text-amber-200 transition"
@@ -32,6 +40,25 @@ export default function Header({ currentUser, onNavigate, onLogout }) {
             <span>Home</span>
           </button>
 
+          {/* PAGE 1 */}
+          <button
+            onClick={() => onNavigate("page1")}
+            className="flex items-center gap-1 hover:text-amber-200 transition"
+          >
+            <FileText size={18} />
+            <span>Page 1</span>
+          </button>
+
+          {/* PAGE 2 */}
+          <button
+            onClick={() => onNavigate("page2")}
+            className="flex items-center gap-1 hover:text-amber-200 transition"
+          >
+            <FileText size={18} />
+            <span>Page 2</span>
+          </button>
+
+          {/* If NOT logged in */}
           {!currentUser && (
             <>
               <button
@@ -52,11 +79,13 @@ export default function Header({ currentUser, onNavigate, onLogout }) {
             </>
           )}
 
+          {/* If logged in */}
           {currentUser && (
             <>
               <span className="hidden md:inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm">
                 👋 Hi, <strong>{currentUser.username}</strong>
               </span>
+
               <button
                 onClick={onLogout}
                 className="flex items-center gap-1 bg-white text-amber-800 px-4 py-1.5 rounded-full font-semibold hover:bg-amber-100 transition"

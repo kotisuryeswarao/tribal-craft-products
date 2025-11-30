@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-export default function Home({ products }) {
+export default function Home({ products, onNavigate }) {
   const [search, setSearch] = useState("");
 
   const filteredProducts = products.filter((p) =>
@@ -11,8 +10,9 @@ export default function Home({ products }) {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-amber-100 via-orange-50 to-amber-200">
+      
       {/* 🌄 Hero Banner */}
-      <div className="relative w-full h-[65vh] overflow-hidden flex items-center justify-center mb-16">
+      <div className="relative w-full h-[65vh] overflow-hidden flex items-center justify-center mb-10">
         <motion.img
           src="https://images.unsplash.com/photo-1602016753462-3e3e5dfd01b3?auto=format&fit=crop&w=1600&q=80"
           alt="Tribal Art Banner"
@@ -22,6 +22,7 @@ export default function Home({ products }) {
           transition={{ duration: 2 }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40" />
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,14 +38,35 @@ export default function Home({ products }) {
         </motion.div>
       </div>
 
-      {/* 🔍 Search Bar */}
+      {/* ⭐ Page Buttons */}
+      <div className="flex justify-center gap-6 mb-12">
+        <motion.button
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => onNavigate("page1")}
+          className="px-8 py-3 bg-gradient-to-r from-amber-700 to-orange-600 text-white font-semibold rounded-full shadow-lg"
+        >
+          📄 Page 1
+        </motion.button>
+
+        <motion.button
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => onNavigate("page2")}
+          className="px-8 py-3 bg-gradient-to-r from-orange-600 to-amber-700 text-white font-semibold rounded-full shadow-lg"
+        >
+          📄 Page 2
+        </motion.button>
+      </div>
+
+      {/* 🔍 Search */}
       <div className="flex justify-center mb-12 px-4">
         <input
           type="text"
           placeholder="🔍 Search for tribal crafts..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full md:w-1/3 px-5 py-3 rounded-full border-2 border-amber-600 shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-400 transition-all text-lg bg-white"
+          className="w-full md:w-1/3 px-5 py-3 rounded-full border-2 border-amber-600 shadow-lg text-lg bg-white"
         />
       </div>
 
@@ -58,13 +80,12 @@ export default function Home({ products }) {
           filteredProducts.map((p, index) => (
             <motion.div
               key={p.id}
-              className="bg-white/95 rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-300 flex flex-col group border border-amber-200 backdrop-blur-sm"
+              className="bg-white/95 rounded-2xl shadow-xl overflow-hidden flex flex-col border border-amber-200"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              {/* 🖼️ Product Image */}
               <div className="relative w-full h-[280px] overflow-hidden">
                 <motion.img
                   src={p.image}
@@ -74,49 +95,43 @@ export default function Home({ products }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
                 <div className="absolute top-0 left-0 w-full p-4 flex justify-between items-start text-white">
-                  <span className="bg-amber-700 text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                  <span className="bg-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
                     {p.artisan}
                   </span>
-                  <span className="bg-green-600 text-sm font-bold px-3 py-1 rounded-full shadow-md">
+                  <span className="bg-green-600 text-sm font-bold px-3 py-1 rounded-full">
                     ₹{p.price.toFixed(2)}
                   </span>
                 </div>
 
                 <div className="absolute bottom-4 left-0 w-full text-center">
-                  <h3 className="text-xl font-semibold tracking-wide text-white drop-shadow-lg">
+                  <h3 className="text-xl font-semibold text-white drop-shadow-lg">
                     {p.name}
                   </h3>
                 </div>
               </div>
 
-              {/* 📦 Description & Buttons */}
               <div className="p-6 flex flex-col items-center gap-4 mt-auto">
                 <p className="text-gray-700 text-sm text-center line-clamp-2 mb-2">
                   {p.description}
                 </p>
 
                 <div className="flex gap-4">
-                  {/* 🛒 Add to Cart Button */}
                   <motion.button
-                    whileHover={{
-                      scale: 1.07,
-                      boxShadow: "0px 0px 12px rgba(180,83,9,0.4)",
-                    }}
+                    whileHover={{ scale: 1.07 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-6 py-2 bg-gradient-to-r from-amber-700 via-orange-600 to-amber-500 text-white border-2 border-transparent rounded-full font-semibold shadow-md hover:border-amber-800 transition-all duration-300"
+                    className="px-6 py-2 bg-gradient-to-r from-amber-700 via-orange-600 to-amber-500 text-white rounded-full shadow-md"
                   >
                     🛒 Add to Cart
                   </motion.button>
 
-                  {/* 👁️ View Details Button */}
-                  <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      to={`/product/${p.id}`}
-                      className="px-6 py-2 border-2 border-amber-700 text-amber-800 rounded-full font-semibold hover:bg-gradient-to-r hover:from-amber-700 hover:to-orange-600 hover:text-white shadow-md transition-all duration-300"
-                    >
-                      👁️ View Details
-                    </Link>
-                  </motion.div>
+                  <motion.a
+                    whileHover={{ scale: 1.07 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={`/product/${p.id}`}
+                    className="px-6 py-2 border-2 border-amber-700 text-amber-800 rounded-full hover:bg-gradient-to-r hover:from-amber-700 hover:to-orange-600 hover:text-white shadow-md"
+                  >
+                    👁️ View Details
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -131,21 +146,14 @@ export default function Home({ products }) {
         transition={{ duration: 1 }}
         className="bg-gradient-to-r from-amber-900 via-orange-700 to-amber-800 text-white text-center py-20 mt-10 shadow-inner"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">
-          Empower Tribal Communities
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Empower Tribal Communities</h2>
         <p className="max-w-2xl mx-auto text-lg mb-8 text-amber-100">
           Every purchase supports artisans, celebrates culture, and preserves heritage.
         </p>
         <motion.button
-          whileHover={{
-            scale: 1.1,
-            backgroundColor: "#fffaf3",
-            color: "#92400e",
-            borderColor: "#92400e",
-          }}
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="px-10 py-3 bg-white text-amber-800 border-2 border-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+          className="px-10 py-3 bg-white text-amber-800 border-2 border-white font-bold rounded-full shadow-xl"
         >
           🌸 Start Shopping
         </motion.button>

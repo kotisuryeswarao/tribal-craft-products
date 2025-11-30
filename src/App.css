@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top, #fff9f1, #fff3e0);
+  background: radial-gradient(circle at top, #0c12b5, #0b3495);
   color: #3b2f2f;
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -28,8 +28,8 @@ body {
 
 /* 🌸 Header */
 header {
-  background: linear-gradient(90deg, #8b4513, #b45309, #d97706);
-  color: white;
+  background: linear-gradient(90deg, #1808cc, #091db4, #051dd0);
+  color: green;
   padding: 1.2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ nav a,
 nav button {
   margin: 0 12px;
   text-decoration: none;
-  color: #fffbea;
+  color: #0ac00d;
   font-weight: 600;
   background: transparent;
   border: none;
@@ -69,7 +69,7 @@ nav button {
 
 nav a:hover,
 nav button:hover {
-  color: #ffe08a;
+  color: #1564cc;
   transform: scale(1.08);
 }
 
@@ -85,7 +85,7 @@ nav button:hover {
 
 /* 🧺 Product Cards */
 .product-card {
-  background: #ffffff;
+  background: #3404c2;
   border-radius: 1rem;
   box-shadow: 0 6px 20px rgba(160, 82, 45, 0.15);
   overflow: hidden;
@@ -107,7 +107,7 @@ nav button:hover {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-bottom: 3px solid #fcd34d;
+  border-bottom: 3px solid #130cc3;
   transition: transform 0.4s ease, filter 0.3s ease;
 }
 
@@ -123,20 +123,20 @@ nav button:hover {
 }
 
 .product-info h3 {
-  color: #8b4513;
+  color: #08c627;
   font-size: 1.25rem;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
 .product-info p {
-  color: #5b4636;
+  color: #0dc22e;
   font-size: 0.95rem;
   margin-bottom: 10px;
 }
 
 .price {
-  color: #b45309;
+  color: #09bd33;
   font-weight: 700;
   font-size: 1.15rem;
 }
@@ -144,8 +144,8 @@ nav button:hover {
 /* 🪶 Buttons */
 button,
 .btn {
-  background: linear-gradient(90deg, #b45309, #d97706);
-  color: #fff;
+  background: linear-gradient(90deg, #0950b4, #065ad9);
+  color: #32c60d;
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 9999px;
@@ -157,7 +157,7 @@ button,
 
 button:hover,
 .btn:hover {
-  background: linear-gradient(90deg, #92400e, #b45309);
+  background: linear-gradient(90deg, #0e922f, #0f09b4);
   transform: scale(1.07);
   box-shadow: 0 6px 18px rgba(180, 83, 9, 0.25);
 }
@@ -167,11 +167,11 @@ button:hover,
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: linear-gradient(135deg, #b45309, #d97706);
-  color: white;
+  background: linear-gradient(135deg, #0914b4, #1407c9);
+  color: rgb(13, 210, 72);
   border-radius: 50%;
   padding: 18px;
-  box-shadow: 0 8px 20px rgba(212, 152, 72, 0.3);
+  box-shadow: 0 8px 20px rgba(11, 25, 157, 0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
   font-size: 1.5rem;
@@ -183,24 +183,24 @@ button:hover,
 
 /* 🔍 Search Input */
 input[type="text"] {
-  border: 2px solid #d97706;
+  border: 2px solid #0649d9;
   border-radius: 30px;
   padding: 10px 18px;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
-  background-color: #fffdf8;
+  background-color: #13c41c;
   margin: 1rem;
 }
 
 input[type="text"]:focus {
-  border-color: #92400e;
-  box-shadow: 0 0 10px rgba(146, 64, 14, 0.3);
+  border-color: #09bb38;
+  box-shadow: 0 0 10px rgba(6, 176, 23, 0.3);
 }
 
 /* 🌸 Footer */
 footer {
-  background: linear-gradient(90deg, #8b4513, #b45309);
+  background: linear-gradient(90deg, #0c1ab1, #0928b4);
   color: #fffbea;
   text-align: center;
   padding: 1.2rem;
@@ -210,7 +210,7 @@ footer {
 }
 
 footer a {
-  color: #ffe08a;
+  color: #0c46bb;
   text-decoration: none;
   font-weight: 600;
 }
